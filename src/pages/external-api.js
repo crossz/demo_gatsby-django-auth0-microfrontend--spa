@@ -2,7 +2,7 @@ import React from "react";
 import { CodeSnippet } from "../components/code-snippet";
 import { AccessControlLevel, useExternalApi } from "../hooks/use-external-api";
 
-export const ExternalApi = () => {
+const ExternalApi = () => {
   const {
     selectedAccessControlLevel,
     apiEndpoint,
@@ -32,7 +32,9 @@ export const ExternalApi = () => {
           </div>
           <div className="messages-grid__options">
             <div
+              aria-hidden="true"
               onClick={getPublicResource}
+              onKeyDown={getPublicResource}
               className={`messages-grid__option ${
                 selectedAccessControlLevel === AccessControlLevel.PUBLIC &&
                 "messages-grid__option--active"
@@ -41,7 +43,9 @@ export const ExternalApi = () => {
               Public
             </div>
             <div
+              aria-hidden="true"
               onClick={getProtectedResource}
+              onKeyDown={getProtectedResource}
               className={`messages-grid__option ${
                 selectedAccessControlLevel === AccessControlLevel.PROTECTED &&
                 "messages-grid__option--active"
@@ -50,7 +54,9 @@ export const ExternalApi = () => {
               Protected
             </div>
             <div
+              aria-hidden="true"
               onClick={getRbacResource}
+              onKeyDown={getRbacResource}
               className={`messages-grid__option ${
                 selectedAccessControlLevel === AccessControlLevel.RBAC &&
                 "messages-grid__option--active"
@@ -59,7 +65,9 @@ export const ExternalApi = () => {
               RBAC
             </div>
             <div
+              aria-hidden="true"
               onClick={checkCorsAllowedMethod}
+              onKeyDown={checkCorsAllowedMethod}
               className={`messages-grid__option ${
                 selectedAccessControlLevel === AccessControlLevel.CORS &&
                 "messages-grid__option--active"
@@ -74,3 +82,5 @@ export const ExternalApi = () => {
     </div>
   );
 };
+
+export default ExternalApi;

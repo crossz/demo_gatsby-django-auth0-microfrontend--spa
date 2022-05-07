@@ -1,9 +1,9 @@
 import React from "react";
 
-const domain = process.env.REACT_APP_AUTH0_DOMAIN;
-const clientId = process.env.REACT_APP_AUTH0_CLIENT_ID;
-const audience = process.env.REACT_APP_AUTH0_AUDIENCE;
-const apiServerUrl = process.env.REACT_APP_API_SERVER_URL;
+const domain = process.env.GATSBY_AUTH0_DOMAIN;
+const clientId = process.env.GATSBY_AUTH0_CLIENT_ID;
+const audience = process.env.GATSBY_AUTH0_AUDIENCE;
+const apiServerUrl = process.env.GATSBY_API_SERVER_URL;
 
 const isEnvValid = domain && clientId && audience && apiServerUrl;
 

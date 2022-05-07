@@ -2,7 +2,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import React from "react";
 import { CodeSnippet } from "../components/code-snippet";
 
-export const Profile = () => {
+const Profile = () => {
   const { user } = useAuth0();
 
   if (!user) {
@@ -38,3 +38,5 @@ export const Profile = () => {
     </div>
   );
 };
+
+export default Profile;

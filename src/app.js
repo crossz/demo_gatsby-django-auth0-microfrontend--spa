@@ -5,10 +5,10 @@ import { Footer } from "./components/footer";
 import { Loader } from "./components/loader";
 import { NavBar } from "./components/nav-bar";
 import { ProtectedRoute } from "./components/protected-route";
-import { ExternalApi } from "./pages/external-api";
-import { Home } from "./pages/home";
-import { NotFound } from "./pages/not-found";
-import { Profile } from "./pages/profile";
+import ExternalApi from "./pages/external-api";
+import Home from "./pages/home";
+import NotFound from "./pages/404";
+import Profile from "./pages/profile";
 
 export const App = () => {
   const { isLoading } = useAuth0();
