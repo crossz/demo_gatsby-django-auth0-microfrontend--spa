@@ -1,5 +1,6 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+// import { NavLink } from "react-router-dom";
+import { Link } from "@reach/router";
 import { AuthenticationButton } from "./buttons/authentication-button";
 
 export const NavBar = () => {
@@ -7,7 +8,7 @@ export const NavBar = () => {
     <div className="nav-bar__container">
       <nav className="nav-bar">
         <div className="nav-bar__brand">
-          <NavLink to="/">
+          <Link to="/">
             <img
               className="nav-bar__logo"
               src="https://cdn.auth0.com/blog/hello-auth0/auth0-shield.svg"
@@ -15,25 +16,25 @@ export const NavBar = () => {
               width="35.98"
               height="40"
             />
-          </NavLink>
+          </Link>
         </div>
         <div className="nav-bar__tabs">
-          <NavLink
+          <Link
             to="/profile"
-            exact
+            
             className="nav-bar__tab"
-            activeClassName="nav-bar__tab--active"
+            
           >
             Profile
-          </NavLink>
-          <NavLink
+          </Link>
+          <Link
             to="/external-api"
-            exact
+            
             className="nav-bar__tab"
-            activeClassName="nav-bar__tab--active"
+            
           >
             External API
-          </NavLink>
+          </Link>
         </div>
         <div className="nav-bar__actions">
           <AuthenticationButton />

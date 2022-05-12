@@ -1,13 +1,14 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import React from "react";
-import { Route, Switch } from "react-router-dom";
+// import { Route, Switch } from "react-router-dom";
+import { Router } from "@reach/router";
 import { Footer } from "./components/footer";
 import { Loader } from "./components/loader";
 import { NavBar } from "./components/nav-bar";
-import { ProtectedRoute } from "./components/protected-route";
-import ExternalApi from "./pages/external-api";
+// import { ProtectedRoute } from "./components/protected-route";
+// import ExternalApi from "./pages/external-api";
+// import NotFound from "./pages/404";
 import Home from "./pages/home";
-import NotFound from "./pages/404";
 import Profile from "./pages/profile";
 
 export const App = () => {
@@ -25,12 +26,16 @@ export const App = () => {
     <div className="page-layout">
       <NavBar />
       <div className="page-layout__content">
-        <Switch>
+        <Router>
+          <Home path="/" />
+          <Profile path="/profile" />
+        </Router>
+        {/* <Switch>
           <Route path="/" exact component={Home} />
           <ProtectedRoute path="/profile" component={Profile} />
           <ProtectedRoute path="/external-api" component={ExternalApi} />
           <Route path="*" component={NotFound} />
-        </Switch>
+        </Switch> */}
       </div>
       <Footer />
     </div>

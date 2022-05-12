@@ -1,3 +1,6 @@
-// module.exports = {
-//     plugins: []
-// }
+module.exports = {
+    plugins: [],
+    siteMetadata: {
+        title: 'Gatsby Default Starter',
+    }
+}

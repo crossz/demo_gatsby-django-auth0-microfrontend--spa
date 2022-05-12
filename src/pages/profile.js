@@ -2,7 +2,16 @@ import { useAuth0 } from "@auth0/auth0-react";
 import React from "react";
 import { CodeSnippet } from "../components/code-snippet";
 
-const Profile = () => {
+
+// import { BrowserRouter } from "react-router-dom";
+
+import { Auth0ProviderWithHistory } from "../auth0-provider-with-history";
+import { EnvProvider } from "../context/env.context";
+import "../styles/styles.css";
+// import { NavBar } from "../components/nav-bar";
+
+
+const Profile1 = () => {
   const { user } = useAuth0();
 
   if (!user) {
@@ -10,6 +19,8 @@ const Profile = () => {
   }
 
   return (
+    <>
+    {/* <NavBar /> */}
     <div className="content-layout">
       <h1 className="content__title">Profile</h1>
       <div className="content__body">
@@ -36,7 +47,28 @@ const Profile = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
+
+const Profile = () => {
+  return (
+    <React.StrictMode>
+    {/* <BrowserRouter> */}
+    <EnvProvider>
+        <Auth0ProviderWithHistory>
+        <Profile1 />
+        </Auth0ProviderWithHistory>
+      </EnvProvider>
+    
+    {/* </BrowserRouter> */}
+  </React.StrictMode>
+  )
+  }
+
 export default Profile;
+
+
+
+
