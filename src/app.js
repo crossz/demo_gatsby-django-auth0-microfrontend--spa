@@ -8,7 +8,7 @@ import { NavBar } from "./components/nav-bar";
 // import { ProtectedRoute } from "./components/protected-route";
 // import ExternalApi from "./pages/external-api";
 // import NotFound from "./pages/404";
-import Home from "./pages/home";
+import Home from "./components/home";
 import Profile from "./pages/profile";
 
 export const App = () => {

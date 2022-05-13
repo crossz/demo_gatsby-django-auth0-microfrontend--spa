@@ -11,6 +11,7 @@ import "../styles/styles.css";
 // import { NavBar } from "../components/nav-bar";
 
 
+
 const Profile1 = () => {
   const { user } = useAuth0();
 
@@ -52,23 +53,23 @@ const Profile1 = () => {
 };
 
 
+
+
+
+
 const Profile = () => {
-  return (
-    <React.StrictMode>
-    {/* <BrowserRouter> */}
-    <EnvProvider>
+return (
+      <EnvProvider>
         <Auth0ProviderWithHistory>
-        <Profile1 />
+          <Profile1 />
         </Auth0ProviderWithHistory>
       </EnvProvider>
-    
-    {/* </BrowserRouter> */}
-  </React.StrictMode>
-  )
-  }
+)
+}
+
+
 
 export default Profile;
-
 
 
 
