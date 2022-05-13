@@ -1,5 +1,4 @@
 import { Auth0Provider } from "@auth0/auth0-react";
-// import { navigate } from "@reach/router";
 import { navigate } from 'gatsby';
 import React from "react";
 // import { useHistory } from "react-router-dom";

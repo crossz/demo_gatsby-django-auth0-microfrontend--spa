@@ -1,6 +1,6 @@
 import React from "react";
 // import { NavLink } from "react-router-dom";
-import { Link } from "@reach/router";
+import { Link } from "gatsby";
 import { AuthenticationButton } from "./buttons/authentication-button";
 
 export const NavBar = () => {
