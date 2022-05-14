@@ -1,6 +1,7 @@
 import React from "react";
 import { CodeSnippet } from "../components/code-snippet";
 import { AccessControlLevel, useExternalApi } from "../hooks/use-external-api";
+import { NavBar } from "../components/nav-bar";
 
 const ExternalApi = () => {
   const {
@@ -15,6 +16,9 @@ const ExternalApi = () => {
   } = useExternalApi();
 
   return (
+    <>
+    <NavBar />
+    
     <div className="content-layout">
       <h1 className="content__title">External API</h1>
       <div className="content__body">
@@ -80,6 +84,7 @@ const ExternalApi = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
