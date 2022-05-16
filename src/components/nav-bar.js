@@ -7,7 +7,7 @@ export const NavBar = () => {
     <div className="nav-bar__container">
       <nav className="nav-bar">
         <div className="nav-bar__brand">
-          <NavLink to="/">
+          <NavLink to="/spa1">
             <img
               className="nav-bar__logo"
               src="https://cdn.auth0.com/blog/hello-auth0/auth0-shield.svg"
@@ -19,7 +19,7 @@ export const NavBar = () => {
         </div>
         <div className="nav-bar__tabs">
           <NavLink
-            to="/profile"
+            to="/spa1/profile"
             exact
             className="nav-bar__tab"
             activeClassName="nav-bar__tab--active"
@@ -27,7 +27,7 @@ export const NavBar = () => {
             Profile
           </NavLink>
           <NavLink
-            to="/external-api"
+            to="/spa1/external-api"
             exact
             className="nav-bar__tab"
             activeClassName="nav-bar__tab--active"

@@ -26,9 +26,9 @@ export const App = () => {
       <NavBar />
       <div className="page-layout__content">
         <Switch>
-          <Route path="/" exact component={Home} />
-          <ProtectedRoute path="/profile" component={Profile} />
-          <ProtectedRoute path="/external-api" component={ExternalApi} />
+          <Route path="/spa1" exact component={Home} />
+          <ProtectedRoute path="/spa1/profile" component={Profile} />
+          <ProtectedRoute path="/spa1/external-api" component={ExternalApi} />
           <Route path="*" component={NotFound} />
         </Switch>
       </div>
