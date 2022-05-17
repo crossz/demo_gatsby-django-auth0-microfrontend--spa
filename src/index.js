@@ -11,7 +11,8 @@ const root = ReactDOM.createRoot(rootElement);
 
 root.render(
   <React.StrictMode>
-    <BrowserRouter basename="/spa1">
+    {/* <BrowserRouter basename="/spa1"> */}
+    <BrowserRouter>
       <EnvProvider>
         <Auth0ProviderWithHistory>
           <App />
