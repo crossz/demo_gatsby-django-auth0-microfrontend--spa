@@ -1,14 +1,17 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import { App } from "./app";
 import { Auth0ProviderWithHistory } from "./auth0-provider-with-history";
 import { EnvProvider } from "./context/env.context";
 import "./styles/styles.css";
 
-ReactDOM.render(
+const rootElement = document.getElementById('root');
+const root = ReactDOM.createRoot(rootElement);
+
+root.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/spa1">
       <EnvProvider>
         <Auth0ProviderWithHistory>
           <App />
@@ -16,5 +19,4 @@ ReactDOM.render(
       </EnvProvider>
     </BrowserRouter>
   </React.StrictMode>,
-  document.getElementById("root")
 );

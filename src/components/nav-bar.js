@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 import { AuthenticationButton } from "./buttons/authentication-button";
 
 export const NavBar = () => {
@@ -7,7 +7,7 @@ export const NavBar = () => {
     <div className="nav-bar__container">
       <nav className="nav-bar">
         <div className="nav-bar__brand">
-          <NavLink to="/spa1">
+          <NavLink to="/">
             <img
               className="nav-bar__logo"
               src="https://cdn.auth0.com/blog/hello-auth0/auth0-shield.svg"
@@ -19,18 +19,18 @@ export const NavBar = () => {
         </div>
         <div className="nav-bar__tabs">
           <NavLink
-            to="/spa1/profile"
-            exact
+            to="/profile"
+            
             className="nav-bar__tab"
-            activeClassName="nav-bar__tab--active"
+            // activeClassName="nav-bar__tab--active"
           >
             Profile
           </NavLink>
           <NavLink
-            to="/spa1/external-api"
-            exact
+            to="/external-api"
+            
             className="nav-bar__tab"
-            activeClassName="nav-bar__tab--active"
+            // activeClassName="nav-bar__tab--active"
           >
             External API
           </NavLink>
@@ -39,6 +39,7 @@ export const NavBar = () => {
           <AuthenticationButton />
         </div>
       </nav>
+      <Outlet />
     </div>
   );
 };

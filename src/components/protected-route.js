@@ -5,9 +5,7 @@ import { Loader } from "./loader";
 
 export const ProtectedRoute = ({ component, ...args }) => (
   <Route
-    component={withAuthenticationRequired(component, {
-      onRedirecting: () => <Loader />,
-    })}
+    element={withAuthenticationRequired(component, { onRedirecting: () => <Loader />,})}
     {...args}
   />
 );

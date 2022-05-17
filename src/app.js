@@ -1,14 +1,18 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import React from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
+import { withAuthenticationRequired } from "@auth0/auth0-react";
 import { Footer } from "./components/footer";
 import { Loader } from "./components/loader";
 import { NavBar } from "./components/nav-bar";
-import { ProtectedRoute } from "./components/protected-route";
+// import { ProtectedRoute } from "./components/protected-route";
 import { ExternalApi } from "./pages/external-api";
 import { Home } from "./pages/home";
 import { NotFound } from "./pages/not-found";
 import { Profile } from "./pages/profile";
+
+const ProfileElement = withAuthenticationRequired(Profile, { onRedirecting: () => <Loader />,})
+const ExternalApiElement = withAuthenticationRequired(ExternalApi, { onRedirecting: () => <Loader />,})
 
 export const App = () => {
   const { isLoading } = useAuth0();
@@ -25,12 +29,13 @@ export const App = () => {
     <div className="page-layout">
       <NavBar />
       <div className="page-layout__content">
-        <Switch>
-          <Route path="/spa1" exact component={Home} />
-          <ProtectedRoute path="/spa1/profile" component={Profile} />
-          <ProtectedRoute path="/spa1/external-api" component={ExternalApi} />
-          <Route path="*" component={NotFound} />
-        </Switch>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/profile" element={<ProfileElement />} />
+          <Route path="/external-api" element={<ExternalApiElement />} />
+          <Route path="/" exact element={<NotFound />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
       </div>
       <Footer />
     </div>
