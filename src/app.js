@@ -30,10 +30,10 @@ export const App = () => {
       <NavBar />
       <div className="page-layout__content">
         <Routes>
-          <Route path="/spa1" element={<Home />} />
-          <Route path="/spa1/profile" element={<ProfileElement />} />
-          <Route path="/spa1/external-api" element={<ExternalApiElement />} />
-          
+          <Route path="/" element={<Home />} />
+          <Route path="/unprotected-external-api" element={<ExternalApi />} />
+          <Route path="/profile" element={<ProfileElement />} />
+          <Route path="/external-api" element={<ExternalApiElement />} />
           <Route component={() => (<div>404 Not found </div>)} />
         </Routes>
       </div>
