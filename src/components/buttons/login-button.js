@@ -4,11 +4,19 @@ import React from "react";
 export const LoginButton = () => {
   const { loginWithRedirect } = useAuth0();
 
+  const handleLogin = async () => {
+    await loginWithRedirect({
+      appState: {
+        returnTo: "/profile",
+      },
+      authorizationParams: {
+        prompt: "login",
+      },
+    });
+  };
+
   return (
-    <button
-      className="button button--primary button--compact"
-      onClick={() => loginWithRedirect()}
-    >
+    <button className="button__login" onClick={handleLogin}>
       Log In
     </button>
   );

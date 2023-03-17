@@ -4,15 +4,16 @@ import React from "react";
 export const LogoutButton = () => {
   const { logout } = useAuth0();
 
+  const handleLogout = () => {
+    logout({
+      logoutParams: {
+        returnTo: window.location.origin,
+      },
+    });
+  };
+
   return (
-    <button
-      className="button button--primary button--compact"
-      onClick={() =>
-        logout({
-          returnTo: window.location.origin,
-        })
-      }
-    >
+    <button className="button__logout" onClick={handleLogout}>
       Log Out
     </button>
   );

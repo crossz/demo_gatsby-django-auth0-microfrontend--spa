@@ -3,6 +3,7 @@
   flex-direction: column;
   width: 100%;
   border-radius: 0.8rem;
+  margin-top: 3.2rem;
   overflow: hidden;
 }
 
@@ -10,7 +11,7 @@
   height: 4.8rem;
   width: 100%;
 
-  background-color: rgb(189, 196, 207);
+  background-color: var(--aluminium);
   color: var(--black);
 
   font-family: "Fira Code", source-code-pro, Menlo, Monaco, Consolas,
@@ -25,15 +26,14 @@
 }
 
 .code-snippet__container {
+  min-height: 32.4rem;
   background-color: var(--dark-aluminium);
-
   overflow-x: auto;
 }
 
 .code-snippet__wrapper {
   display: inline-block;
   padding: 32px;
-  min-height: 18rem;
 }
 
 .code-snippet__body {

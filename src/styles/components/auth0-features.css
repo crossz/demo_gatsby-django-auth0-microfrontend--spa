@@ -29,6 +29,8 @@
 }
 
 .auth0-feature {
+  display: block;
+
   background-color: var(--white);
 
   color: var(--black);

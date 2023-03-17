@@ -1,39 +1,11 @@
-# Note: for prefix path or basename of BrowserRouter
-1. `"homepage": "/spa1"`: Generated index.html will use assets with prefix of this homepage.
-2. `"build": "BUILD_PATH='./build/spa1/' react-scripts build"`: Only for output dir in build dir.
-3. `<BrowserRouter basename="/spa1">`: Tricky part. 
-    - if basename is activated, the root of '/' will not be handled even by 404 page, as it is beyond the basename coverage. Correspondingly, the auth0 will not work at the step of '/?code=....', as no web service for the root path.
-    - work but not the prefix way is to ignore the basename, and use the absolute url for nav-bar.js(controlling the link) and app.js (controlling the routes). In this case, root '/' can be handled easily, even 404, and the auth0 redirecting will work.
+# React/JavaScript: Basic User Authentication Code Sample
 
+This JavaScript code sample demonstrates **how to implement user authentication** in React applications using Auth0. This React code sample builds the Single-Page Application (SPA) using the React Router 6 library.
 
-# Hello, React World!
-This code sample demonstrates how to implement authentication in a React Single-Page Application (SPA).
+This code sample is part of the ["Auth0 Developer Resources"](https://developer.auth0.com/resources), a place where you can explore the authentication and authorization features of the Auth0 Identity Platform.
 
-![Hello, React World!](https://cdn.auth0.com/blog/hello-auth0/hello-react.png)
+Visit the ["React/JavaScript + React Router 6 Code Sample: User Authentication For Basic Apps"](https://developer.auth0.com/resources/code-samples/spa/react/basic-authentication) page for instructions on how to configure and run this code sample and how to integrate it with an API server of your choice to [create a full-stack code sample](https://developer.auth0.com/resources/code-samples/full-stack/hello-world/basic-access-control/spa).
 
+## Why Use Auth0?
 
-
-## Get Started
-
-Install the project dependencies:
-
-```bash
-npm install
-```
-
-Create a `.env` file under the root project directory with the following content:
-
-```bash
-REACT_APP_AUTH0_DOMAIN=
-REACT_APP_AUTH0_CLIENT_ID=
-REACT_APP_AUTH0_AUDIENCE=https://hello-world.example.com
-REACT_APP_API_SERVER_URL=http://localhost:6060
-```
-
-Run the application:
-
-```bash
-npm start
-```
-
-Visit [`http://localhost:4040/`](http://localhost:4040/) to access the starter application.
+Auth0 is a flexible drop-in solution to add authentication and authorization services to your applications. Your team and organization can avoid the cost, time, and risk that come with building your own solution to authenticate and authorize users. We offer tons of guidance and SDKs for you to get started and [integrate Auth0 into your stack easily](https://developer.auth0.com/resources/code-samples/full-stack).

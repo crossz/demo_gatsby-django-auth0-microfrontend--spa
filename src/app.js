@@ -1,18 +1,15 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import { withAuthenticationRequired } from "@auth0/auth0-react";
-import { Footer } from "./components/footer";
-import { Loader } from "./components/loader";
-import { NavBar } from "./components/nav-bar";
-// import { ProtectedRoute } from "./components/protected-route";
-import { ExternalApi } from "./pages/external-api";
-import { Home } from "./pages/home";
-// import { NotFound } from "./pages/not-found";
-import { Profile } from "./pages/profile";
-
-const ProfileElement = withAuthenticationRequired(Profile, { onRedirecting: () => <Loader />,})
-const ExternalApiElement = withAuthenticationRequired(ExternalApi, { onRedirecting: () => <Loader />,})
+import { PageLoader } from "./components/page-loader";
+import { AuthenticationGuard } from "./components/authentication-guard";
+import { AdminPage } from "./pages/admin-page";
+import { CallbackPage } from "./pages/callback-page";
+import { HomePage } from "./pages/home-page";
+import { NotFoundPage } from "./pages/not-found-page";
+import { ProfilePage } from "./pages/profile-page";
+import { ProtectedPage } from "./pages/protected-page";
+import { PublicPage } from "./pages/public-page";
 
 export const App = () => {
   const { isLoading } = useAuth0();
@@ -20,24 +17,29 @@ export const App = () => {
   if (isLoading) {
     return (
       <div className="page-layout">
-        <Loader />
+        <PageLoader />
       </div>
     );
   }
 
   return (
-    <div className="page-layout">
-      <NavBar />
-      <div className="page-layout__content">
-        <Routes>
-          <Route path="/spa1" element={<Home />} />
-          <Route path="/spa1/profile" element={<ProfileElement />} />
-          <Route path="/spa1/external-api" element={<ExternalApiElement />} />
-          
-          <Route component={() => (<div>404 Not found </div>)} />
-        </Routes>
-      </div>
-      <Footer />
-    </div>
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route
+        path="/profile"
+        element={<AuthenticationGuard component={ProfilePage} />}
+      />
+      <Route path="/public" element={<PublicPage />} />
+      <Route
+        path="/protected"
+        element={<AuthenticationGuard component={ProtectedPage} />}
+      />
+      <Route
+        path="/admin"
+        element={<AuthenticationGuard component={AdminPage} />}
+      />
+      <Route path="/callback" element={<CallbackPage />} />
+      <Route path="*" element={<NotFoundPage />} />
+    </Routes>
   );
 };

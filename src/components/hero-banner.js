@@ -1,28 +1,27 @@
 import React from "react";
 
 export const HeroBanner = () => {
-  const logo = "https://cdn.auth0.com/blog/hello-auth0/react-logo.svg";
-
-  const openCodeSample = () => {
-    window.open(
-      "https://auth0.com/developers/hub/code-samples/spa/react-javascript/",
-      "_blank",
-      "noopener noreferrer"
-    );
-  };
+  const logo = "https://cdn.auth0.com/blog/developer-hub/react-logo.svg";
 
   return (
-    <div className="hero-banner">
-      <img className="hero-banner__logo" src={logo} alt="React logo" />
+    <div className="hero-banner hero-banner--pink-yellow">
+      <div className="hero-banner__logo">
+        <img className="hero-banner__image" src={logo} alt="React logo" />
+      </div>
       <h1 className="hero-banner__headline">Hello, React World!</h1>
       <p className="hero-banner__description">
         This is a sample application that demonstrates the authentication flow
-        for a React app using <strong>Auth0</strong>.
+        for React apps using <strong>Auth0</strong>.
       </p>
-
-      <button onClick={openCodeSample} className="button button--secondary">
-        Check out the code sample →
-      </button>
+      <a
+        id="code-sample-link"
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://developer.auth0.com/resources/code-samples/spa/react/basic-authentication"
+        className="button button--secondary"
+      >
+        Check out the React code sample →
+      </a>
     </div>
   );
 };
