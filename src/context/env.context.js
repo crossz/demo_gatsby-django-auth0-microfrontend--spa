@@ -3,6 +3,7 @@ import React from "react";
 const domain = process.env.REACT_APP_AUTH0_DOMAIN;
 const clientId = process.env.REACT_APP_AUTH0_CLIENT_ID;
 const audience = process.env.REACT_APP_AUTH0_AUDIENCE;
+const redirectUri = process.env.REACT_APP_AUTH0_CALLBACK_URL;
 const apiServerUrl = process.env.REACT_APP_API_SERVER_URL;
 
 const isEnvValid = domain && clientId && audience && apiServerUrl;
@@ -15,6 +16,7 @@ const dotenv = {
   domain: domain,
   clientId: clientId,
   audience: audience,
+  redirectUri: redirectUri,
   apiServerUrl: apiServerUrl,
 };
 
